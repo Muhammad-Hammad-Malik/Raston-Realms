@@ -1,0 +1,161 @@
+﻿@page
+@model RastonRealm.Pages.ClientInboxModel
+@{
+}
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" media="all">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+        .chat-container {
+            max-width: 70%;
+            margin: 50px auto;
+            background-color: #dcd3baa3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 15px;
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-weight: bold;
+            margin-bottom: 2%;
+        }
+
+        .message {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .sender-message {
+            background-color: #86b7fe;
+            color: #fff;
+            text-align: right;
+        }
+
+        .receiver-message {
+            background-color: #c2ffbf;
+            text-align: left;
+        }
+
+        .message-date {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .input-group {
+            border-top: 1px solid #dee2e6;
+            padding: 15px;
+        }
+        /* Surrounding box with hover effects and shadows */
+        .chat-container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+        /* Styling for the form input and button */
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top"
+         style="background-color: #000; color: #fff">
+        <div class="container">
+            <a class="navbar-brand" href="#"> RASTON REALM </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="ClientDashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="MarketPlace">Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ClientInbox">Inbox</a>
+                    </li>
+                    <!-- Logout button with icon -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="16"
+                                 height="16"
+                                 fill="currentColor"
+                                 class="bi bi-box-arrow-right"
+                                 viewBox="0 0 16 16">
+                                <path d="M13.5 1a.5.5 0 0 1 .5.5V15a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5z" />
+                                <path d="M12.854 2.646a.5.5 0 0 1 0 .708L10.207 6H15a.5.5 0 0 1 0 1H10.207l2.647 2.646a.5.5 0 1 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" />
+                                <path d="M2.5 6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
+                                <path d="M8 2.5a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container chat-container">
+        <!-- Chatbox Header with Receiver's Name -->
+        <div class="chat-header">
+            <h4>RastonRealm Team</h4>
+        </div>
+        <!-- Messages -->
+        @foreach (var chat in Model.chats)
+        {
+            <div class="message @(chat.type == "admin" ? "receiver-message" : "sender-message")">
+                <p>@chat.message</p>
+                <p class="message-date">@chat.date.ToString("MMM dd, yyyy hh:mm tt")</p>
+            </div>
+        }
+
+        <!-- Add more messages as needed -->
+        <!-- Message input and send button within the form -->
+        <form method="post">
+            <div class="input-group">
+                <input required
+                       type="text"
+                       name="Message"
+                       class="form-control"
+                       placeholder="Type your message..."
+                       aria-label="Type your message..."
+                       aria-describedby="send-button" />
+                <button class="btn btn-primary" type="submit" id="send-button">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>

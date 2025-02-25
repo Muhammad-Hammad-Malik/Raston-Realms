@@ -1,0 +1,45 @@
+﻿@page
+@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@using Microsoft.AspNetCore.Mvc.RazorPages;
+@using Microsoft.Extensions.Hosting;
+@using System;
+@using System.Data.SqlClient;
+@using System.IO;
+@{
+    var isAdminSignedIn = HttpContext.Request.Cookies["Admin"];
+
+    if (isAdminSignedIn != "true")
+    {
+        Response.Redirect("SignInAdmin");
+        return;
+    }
+    string TourPhoto = Request.Query["TourPhoto"];
+    try
+    {
+        string TourID = Request.Query["TourID"];
+        string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=travel;Integrated Security=True;TrustServerCertificate=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "delete from Tours where TourID=@TourID;";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@TourID", TourID);
+                command.ExecuteNonQuery();
+            }
+            string deleteTourSql = "DELETE FROM Tours WHERE TourID=@TourID;";
+            using (SqlCommand command = new SqlCommand(deleteTourSql, connection))
+            {
+                command.Parameters.AddWithValue("@TourID", TourID);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+    Response.Redirect("AdminDashboard");
+}

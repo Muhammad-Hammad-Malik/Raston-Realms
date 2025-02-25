@@ -1,0 +1,109 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RastonRealm
+build_property.RootNamespace = RastonRealm
+build_property.ProjectDir = D:\Web Projects\RastonRealm\RastonRealm\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Web Projects\RastonRealm\RastonRealm
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/AdminInbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5JbmJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/AdminInboxChat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5JbmJveENoYXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/ClientDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50RGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/ClientInbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50SW5ib3guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/CreateTour.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlVG91ci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/DeleteTour.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlVG91ci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/MarketPlace.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFya2V0UGxhY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/OrderCancelAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJDYW5jZWxBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/OrderCancelClient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJDYW5jZWxDbGllbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/SignInAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbkluQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/SignInClient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbkluQ2xpZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/TourUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG91clVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/ViewTourInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1RvdXJJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Web Projects/RastonRealm/RastonRealm/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-bawgjenh7g

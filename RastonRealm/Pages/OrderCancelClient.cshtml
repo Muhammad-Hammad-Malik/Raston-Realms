@@ -1,0 +1,69 @@
+﻿@page
+@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@using Microsoft.AspNetCore.Mvc.RazorPages;
+@using Microsoft.Extensions.Hosting;
+@using System;
+@using System.Data.SqlClient;
+@using System.IO;
+@model RastonRealm.Pages.OrderCancelClientModel
+@{
+    var user = HttpContext.Request.Cookies["UserId"];
+    if (user == null)
+    {
+        // Redirect to the desired page if the UserId cookie is not set
+        Response.Redirect("SignInClient");
+        return;
+    }
+    string TourID = Request.Query["TourID"];
+    string Seats = Request.Query["TourSeats"];
+    if (TourID == null || Seats == null)
+    {
+        Response.Redirect("ClientDashboard");
+        return;
+    }
+    string _connectionString = "Data Source=.\\sqlexpress;Initial Catalog=travel;Integrated Security=True;TrustServerCertificate=True";
+    try
+    {
+        var userId = HttpContext.Request.Cookies["UserId"];
+
+        if (userId == null)
+        {
+            // Redirect to the desired page if the UserId cookie is not set
+            Response.Redirect("SignInClient");
+        }
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+
+            // Get the TourID and Seats from the URL
+            int tourID = int.Parse(TourID);
+            int seats = int.Parse(Seats);
+
+            // Delete the order
+            var deleteQuery = "DELETE FROM [Order] WHERE OrderID = @TourID";
+
+            using (var command = new SqlCommand(deleteQuery, connection))
+            {
+                command.Parameters.AddWithValue("@TourID", tourID);
+                command.ExecuteNonQuery();
+            }
+
+            // Update FilledSeats in the Tours table
+            var updateQuery = "UPDATE Tours SET FilledSeats = FilledSeats - @Seats WHERE TourID = @TourID";
+
+            using (var updateCommand = new SqlCommand(updateQuery, connection))
+            {
+                updateCommand.Parameters.AddWithValue("@TourID", tourID);
+                updateCommand.Parameters.AddWithValue("@Seats", seats);
+                updateCommand.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+    Response.Redirect("ClientDashboard");
+}

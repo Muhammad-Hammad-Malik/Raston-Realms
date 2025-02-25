@@ -1,0 +1,33 @@
+CREATE TABLE UserAccounts (
+    userID INT IDENTITY(1,1) PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE Tours (
+    TourID INT PRIMARY KEY IDENTITY(1,1),
+    TourName NVARCHAR(255) NOT NULL,
+    TourArea NVARCHAR(255) NOT NULL,
+    TourDate DATE NOT NULL,
+    TourDescription NVARCHAR(MAX),
+    TourPrice DECIMAL(10,2) NOT NULL,
+    TourSeats INT NOT NULL,
+    FilledSeats INT default 0,
+    TourPhoto NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE [Order](
+    OrderID INT PRIMARY KEY IDENTITY(1,1),
+    TourID INT,
+	UserID INT,
+    TotalSeats INT,
+    TourDate DATE NOT NULL
+);
+
+CREATE TABLE chats (
+    userID INT,
+    message VARCHAR(255),
+    date DATETIME,  -- Change data type to DATETIME
+    type VARCHAR(50)
+);
